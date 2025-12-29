@@ -32,6 +32,21 @@ p{
   </style>
 </head>
 <body>
+  <script>
+  const audio = document.getElementById("bg-music");
+
+  function startMusic() {
+    audio.play().catch(() => {});
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("keydown", startMusic);
+    document.removeEventListener("scroll", startMusic);
+  }
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("keydown", startMusic);
+  document.addEventListener("scroll", startMusic);
+</script>
+
   <img src="larry.png" alt="larry image">
   <h2> Be like larry </h2>
   <p> Larry is a great example of how to be a good person. He is always there for his friends, he is kind and helpful, and he never gives up. </p>
@@ -45,6 +60,7 @@ p{
 </body>
 
 </html>
+
 
 
 
